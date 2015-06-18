@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="../vas.js"></script>
+    <script>
+        function pInput() {
+            var input = document.getElementById("cInput").value;
+            var parsed = vas(input);
+            var output = "";
+            for (var i in parsed) {
+                output += String(i) + " : \n";
+                output += "\tvalue : " + parsed[i]["value"] + "\n";
+                output += "\ttype : " + parsed[i]["type"] + "\n";
+            }
+            document.getElementById("cOutput").value = output;
+        }
+    </script>
+</head>
+
+<body>
+    <p>This uses a syntax of:<pre>
+			variable_name=variable_value
+			variable_name2=variable_value2</pre> Seperated by newlines. Variables will be analyzed, and returned in the second box.</p>
+    <textarea rows="30" cols="60" id="cInput" placeholder="name=value"></textarea>
+    <button type="button" onclick="pInput()">Parse</button>
+    <br>
+    <br>
+    <textarea rows="30" cols="60" id="cOutput" placeholder="Generated output will go here." readonly></textarea>
+</body>
+
+</html>
