@@ -22,6 +22,11 @@ function vas(input) {
 			}
 			if (!isNaN(vVN)) {
 				vType = "number";
+				if (vVN % 1 == 0) {
+					vars[vName].isInteger = true;
+				} else {
+					vars[vName].isInteger = false;
+				}
 			}
 			vars[vName].type = vType;
 		}
