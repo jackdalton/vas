@@ -24,6 +24,16 @@ function vas(input) {
 				vType = "number";
 				if (vVN % 1 == 0) {
 					vars[vName].isInteger = true;
+					if (vVN > 0) {
+						vars[vName].isPositive = true;
+					} else {
+						vars[vName].isPositive = false;
+					}
+					if (vVN % 2 == 0) {
+						vars[vName].isEven = true;
+					} else {
+						vars[vName].isEven = false;
+					}
 				} else {
 					vars[vName].isInteger = false;
 				}

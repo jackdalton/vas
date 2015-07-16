@@ -9,6 +9,10 @@
          if (parsed[i]["type"] == "number") {
             output += "\tisInteger : " + parsed[i]["isInteger"] + "\n";
          }
+         if (parsed[i]["isInteger"]) {
+            output += "\tisEven : " + parsed[i]["isEven"] + "\n";
+            output += "\tisPositive : " + parsed[i]["isPositive"] + "\n";
+         }
      }
      document.getElementById("cOutput").value = output;
  }
